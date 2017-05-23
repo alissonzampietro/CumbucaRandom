@@ -6,7 +6,10 @@ window.onload = function()
 	iniciar.addEventListener('click', () => {
 
 		let campo = document.getElementById('nomes');
-		
+
+		if(campo.value == "" && nomes.length === 0)
+			return false;
+
 		if(nomes.length === 0) 
 			nomes = campo.value.split(' - ');
 
