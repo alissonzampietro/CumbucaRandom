@@ -11,7 +11,7 @@ window.onload = function()
 			return false;
 
 		if(nomes.length === 0) 
-			nomes = campo.value.split(' - ');
+			nomes = campo.value.split('-');
 
 		let intervalo = setInterval(function() {
 			let rand = nomes[Math.floor(Math.random() * nomes.length)];
