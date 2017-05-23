@@ -1,25 +1,23 @@
 window.onload = function()
 {
-	var nomes = [];
+	var nomes = ['Bem vindo','Welcome','Bienvenido'];
 	let iniciar = document.getElementById('iniciar');
 
 	iniciar.addEventListener('click', () => {
 
-		let campo = document.getElementById('nomes');
+		let campoNome = document.getElementById('nomes').value;
+		let flagNome = campoNome.split('-');
 
-		if(campo.value == "" && nomes.length === 0)
-			return false;
-
-		if(nomes.length === 0) 
-			nomes = campo.value.split('-');
+		if(flagNome.length > 1)
+			nomes = flagNome;
 
 		let intervalo = setInterval(function() {
 			let rand = nomes[Math.floor(Math.random() * nomes.length)];
-			campo.value = rand;
+			document.getElementById('nomes').value = rand;
 		},20);
 
 		setTimeout(function() {
 			clearInterval(intervalo);
-		},3000);
+		},2000);
 	});
 }
