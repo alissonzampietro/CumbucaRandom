@@ -19,6 +19,9 @@ html,body {
 	font-size: 2em;
 	height: 40px;
 	color: #F6F8FF;
+	background-color: #1fc163;
+	border: none;
+	width: 100%;
 	text-shadow: 1px 1px 1px #000;
 	text-align: center;
 }

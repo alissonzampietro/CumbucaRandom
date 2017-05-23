@@ -1,20 +1,18 @@
 window.onload = function()
 {
-	let nomes = ['Alisson','Jéssica','Rafa','Letícia','Peterson'];
-	let divNomes = document.getElementsByClassName('nomes');
-	nomes.map((valor,i) => {
-		divNomes[0].innerHTML += valor;
-		if((nomes.length - 1) > i )
-			divNomes[0].innerHTML += ' - ';
-	})
+	var nomes = [];
 	let iniciar = document.getElementById('iniciar');
 
-
 	iniciar.addEventListener('click', () => {
+		let campo = document.getElementById('nomes');
+		if(nomes.length === 0) {
+			nomes = campo.value.split(' - ');
+		}
+
 		let intervalo = setInterval(function() {
 			let rand = nomes[Math.floor(Math.random() * nomes.length)];
-			divNomes[0].innerHTML = rand;
-		},40);
+			campo.value = rand;
+		},20);
 
 		setTimeout(function() {
 			clearInterval(intervalo);
